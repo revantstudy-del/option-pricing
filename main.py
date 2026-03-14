@@ -33,9 +33,8 @@ def bs_greeks(S, K, T, r, sigma):
 bs_call, d1, d2 = black_scholes(S0, K, T, r, sigma, "call")
 bs_put,  _,  _  = black_scholes(S0, K, T, r, sigma, "put")
 greeks = bs_greeks(S0, K, T, r, sigma)
-print("=" * 55)
+
 print(" BLACK-SCHOLES ANALYTICAL RESULTS")
-print("=" * 55)
 print(f" Parameters: S={S0}, K={K}, T={T}yr, r={r*100}%, σ={sigma*100}%")
 print(f" d1 = {d1:.4f}   d2 = {d2:.4f}")
 print(f"\n Call Price : ${bs_call:.4f}")
@@ -60,9 +59,7 @@ def monte_carlo_option(S0, K, T, r, sigma, n_paths=100000, option_type="call"):
     se = np.exp(-r * T) * np.std(payoffs) / np.sqrt(n_paths)
     return price, se, S_T
 
-print("\n" + "=" * 55)
 print("MONTE CARLO RESULTS  (n = 100,000 paths)")
-print("=" * 55)
 mc_call, se_call, S_T= monte_carlo_option(S0, K, T, r, sigma, n_paths=100000, option_type="call")
 mc_put,  se_put,  _  = monte_carlo_option(S0, K, T, r, sigma, n_paths=100000, option_type="put")
 print(f" MC Call Price : ${mc_call:.4f} ±{1.96*se_call:.4f}  (95% CI)")
