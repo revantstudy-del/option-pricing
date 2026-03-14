@@ -44,7 +44,7 @@ print(f"\n Put-Call Parity Check:")
 pcp = bs_call - bs_put
 pcp_theory = S0 - K * np.exp(-r * T)
 print(f" C - P (simulation): {pcp:.4f}")
-print(f" S - K*e^(-rT): {pcp_theory:.4f} ✓" if abs(pcp - pcp_theory) < 0.001 else "MISMATCH")
+print(f" S - K*e^(-rT): {pcp_theory:.4f} CORRECT" if abs(pcp - pcp_theory) < 0.001 else "MISMATCH")
 print(f"\n Greeks (Call):")
 for g, v in greeks.items():
     print(f"{g:6s}: {v:.6f}")
