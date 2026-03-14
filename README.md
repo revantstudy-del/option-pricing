@@ -88,7 +88,7 @@ S - Ke^(-rT)  =  4.8771
 | | MC Estimate | Black-Scholes | Error |
 |---|---|---|---|
 | Call | $10.4277 ± $0.0905 | $10.4506 | $0.0228 (0.219%) |
-| Put | $5.6370 ± $0.0540 | $5.5735 | — |
+| Put | $5.6370 ± $0.0540 | $5.5735 | - |
 
 The Monte Carlo estimate converges to within **0.22%** of the analytical Black-Scholes price at 100,000 paths.
 
